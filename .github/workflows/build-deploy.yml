@@ -7,6 +7,11 @@ env:
 on:
   # 手動実行用トリガー
   workflow_dispatch:      
+  push:
+    branches: 
+      [ main ]
+    paths:
+    - '**'
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -95,4 +100,5 @@ jobs:
               --container-name $container_name \
               --image ${{ env.CONTAINER_REGISTRY }}/${{ env.REPOSITORY_NAME }}:${{ github.sha }} \
               --set-env-vars API_BASE_URL=${{ env.API_BASE_URL }}
-          
+              
+ 
