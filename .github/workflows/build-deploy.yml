@@ -1,6 +1,9 @@
 name: Trigger auto deployment
 env:
   CONTAINER_REGISTRY: handson022022jcqujd3euscw2.azurecr.io # Azure Container Registry のドメイン (~.azurecr.io) をこちらに設定
+  RESOURCE_GROUP_NAME: Handson01-CICD
+  CONTAINERAPP_NAME: ctapp-demo-ui
+  API_BASE_URL: https://ctapp-demo-api.graybay-e6b0dd9e.japaneast.azurecontainerapps.io
 on:
   # 手動実行用トリガー
   workflow_dispatch:      
